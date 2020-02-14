@@ -13,9 +13,9 @@ var app = express();
 //Import the mongoose module
 var mongoose = require('mongoose');
 
-//Set up default mongoose connection
-var mongoDB = 'mongodb+srv://mardel011:<Heyhey99>@cluster0-yuz7l.mongodb.net/MarD?retryWrites=true&w=majority';
-mongoose.connect(mongoDB, { useNewUrlParser: true });
+// Set up mongoose connection
+var dev_db_url = 'mongodb+srv://mardel011:Heyhey99@cluster0-mbdj7.mongodb.net/local_library?retryWrites=true'
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 //Get the default connection
 var db = mongoose.connection;
